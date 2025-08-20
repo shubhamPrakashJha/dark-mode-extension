@@ -1,0 +1,6 @@
+/* v1: simple invert-based dark mode */
+html {
+    filter: invert(100%) hue-rotate(180deg) !important;
+    background: #111 !important;
+    color-scheme: dark;
+}
