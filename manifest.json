@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Page Dark Mode Toggle",
+    "version": "0.1.0",
+    "description": "Toggle a quick universal dark mode on the current page.",
+    "action": {
+        "default_title": "Toggle dark mode"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ]
+}
