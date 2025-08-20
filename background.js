@@ -57,3 +57,12 @@ chrome.tabs.onRemoved.addListener(async (tabId) => {
     mem.delete(tabId);
     await chrome.storage.session.remove(String(tabId));
 });
+
+chrome.commands.onCommand.addListener(async (command) => {
+    if (command !== "toggle-dark-mode") return;
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (!tab || !tab.id) return;
+    const isOn = await getOn(tab.id);
+    if (isOn) await disable(tab.id);
+    else await enable(tab.id);
+});
