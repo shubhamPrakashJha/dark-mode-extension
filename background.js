@@ -27,10 +27,14 @@ async function enable(tabId) {
 }
 
 async function disable(tabId) {
-    await chrome.scripting.removeCSS({
-        target: { tabId, allFrames: true },
-        files: ["dark.css"]
-    });
+    try {
+        await chrome.scripting.removeCSS({
+            target: { tabId, allFrames: true },
+            files: ["dark.css"]
+        });
+    } catch (e) {
+        console.debug("removeCSS ignored:", e?.message || e);
+    }
     await setOn(tabId, false);
     await setBadge(tabId, false);
 }
