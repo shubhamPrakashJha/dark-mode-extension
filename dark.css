@@ -1,6 +1,37 @@
-/* v1: simple invert-based dark mode */
 html {
     filter: invert(100%) hue-rotate(180deg) !important;
     background: #111 !important;
     color-scheme: dark;
+}
+
+img,
+video,
+picture,
+canvas,
+iframe,
+svg:not([fill]) {
+    filter: invert(100%) hue-rotate(180deg) !important;
+}
+
+:root,
+html,
+body {
+    background-color: #111 !important;
+}
+
+input,
+textarea,
+select,
+button {
+    background-color: #1a1a1a !important;
+    color: #e6e6e6 !important;
+    border-color: #333 !important;
+}
+
+a {
+    color: #8ab4f8 !important;
+}
+
+* {
+    text-shadow: none !important;
 }
