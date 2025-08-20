@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Page Dark Mode Toggle",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Toggle a quick universal dark mode on the current page.",
     "action": {
         "default_title": "Toggle dark mode"
@@ -11,6 +11,10 @@
     },
     "permissions": [
         "scripting",
-        "activeTab"
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>"
     ]
 }
